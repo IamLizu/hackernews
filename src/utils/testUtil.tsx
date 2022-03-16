@@ -14,7 +14,7 @@ export const renderWithMemoryRouter = (
 
 export const elementFinder = async (id: string, delay?: number) => {
   return expect(
-    await screen.findByTestId(id, {}, { timeout: delay || 1500 })
+    await screen.findByTestId(id, {}, { timeout: delay || 1000 })
   ).toBeInTheDocument();
 };
 
@@ -24,7 +24,7 @@ export const textExpecter = (text: string) => {
 
 export const textFinderRx = async (text: string) => {
   return expect(
-    await screen.findByText(new RegExp(text), {}, { timeout: 1500 })
+    await screen.findByText(new RegExp(text), {}, { timeout: 1000 })
   ).toBeInTheDocument();
 };
 
