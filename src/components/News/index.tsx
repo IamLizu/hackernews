@@ -1,7 +1,7 @@
 import React from "react";
 import { useNews } from "../../context/NewsContext";
 import NewsBlock from "./Block";
-import { Pagination } from "@mui/material";
+import { Pagination, PaginationItem } from "@mui/material";
 
 export default function News() {
   const { currentItems, handlePageClick, pageCount, currentPage } = useNews();
@@ -17,6 +17,7 @@ export default function News() {
           {currentItems && <NewsBlock newsArray={currentItems} />}
 
           <Pagination
+            data-testid={"pagination"}
             count={pageCount}
             page={currentPage}
             onChange={handlePageClick}

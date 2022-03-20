@@ -55,4 +55,18 @@ describe("News", () => {
     await buttonClickerAsync("Can GPT-3 AI write comedy?", 0);
     await elementFinder("news-details");
   });
+
+  test("should check if pagination exists", async () => {
+    await act(async () => {
+      render(
+        <NewsProvider>
+          <MemoryRouter>
+            <News />
+          </MemoryRouter>
+        </NewsProvider>
+      );
+    });
+
+    await elementFinder("pagination");
+  });
 });
